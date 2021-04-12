@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>រូបថត</title>
+
+    <script src='//production-assets.codepen.io/assets/editor/live/console_runner-079c09a0e3b9ff743e39ee2d5637b9216b3545af0de366d4b9aad9dc87e26bfd.js'></script><script src='//production-assets.codepen.io/assets/editor/live/events_runner-73716630c22bbc8cff4bd0f07b135f00a0bdc5d14629260c3ec49e5606f98fdd.js'></script><script src='//production-assets.codepen.io/assets/editor/live/css_live_reload_init-2c0dc5167d60a5af3ee189d570b1835129687ea2a61bee3513dee3a50c115a77.js'></script><meta charset='UTF-8'><meta name="robots" content="noindex"><link rel="shortcut icon" type="image/x-icon" href="//production-assets.codepen.io/assets/favicon/favicon-8ea04875e70c4b0bb41da869e81236e54394d63638a1ef12fa558a4a835f1164.ico" /><link rel="mask-icon" type="" href="//production-assets.codepen.io/assets/favicon/logo-pin-f2d2b6d2c61838f7e76325261b7195c27224080bc099486ddd6dccb469b8e8e6.svg" color="#111" /><link rel="canonical" href="https://codepen.io/RGonyeau/pen/QNLrBP?limit=all&page=54&q=gallery" />
+
+    <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'><link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,200,300,700'>
+
+   
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Dangrek&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <!------ Include the above in your HEAD tag ---------->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <style>
+body {
+	  font-family: 'Source Sans Pro', sans-serif;
+	}
+	
+	#gridGallery {
+	  max-width: 1170px;
+	  margin-left: auto;
+	  margin-right: auto;
+	}
+	
+	h2,
+	.ms-WPBody h2 {
+	  color: #000;
+	}
+	
+	.box h3 {
+	  color: #fff;
+	  font-family: 'Source Sans Pro';
+    font-weight:700;
+	}
+	
+	section {
+	  margin: 25px 0;
+	}
+	
+	#gridGallery .row {
+	  background-color: rgb(255, 255, 255);
+	}
+	
+	.box {
+	  background-position: center center;
+	  background-size: cover;
+	  border: 1px solid #fff;
+	  transition: opacity .25s;
+	  overflow: hidden;
+	}
+	
+	.hiddenText {
+	  display: none !important;
+	}
+	
+	.box:hover {
+	  cursor: pointer;
+	  z-index: 1;
+	}
+	
+	#boxOne,
+	#boxTwo,
+	#boxSeven,
+	#boxEight {
+	  height: 300px;
+	}
+	
+	#boxThree,
+	#boxFour,
+	#boxFive,
+	#boxSix {
+	  height: 150px;
+	}
+	
+	#boxOne {
+	  background-image: url('img/visit_02.png');
+	}
+	
+	#boxEight {
+	  background-image: url('img/visit_01.webp');
+	}
+	
+	#boxTwo {
+	  background-image: url('img/visit_08.jpeg');
+	}
+	
+	#boxSeven {
+	  background-image: url('img/visit_07.jpeg');
+	}
+	
+	#boxThree {
+	  background-image: url('img/visit_03.jpeg');
+	}
+	
+	#boxSix {
+	  background-image: url('img/visit_05.jpeg');
+	}
+	
+	#boxFour {
+	  background-image: url('img/visit_09.jpeg');
+	}
+	
+	#boxFive {
+	  background-image: url('img/visit_04.jpeg');
+	}
+	
+	.full {
+	  float: none;
+	  height: 600px !important;
+	  width: 1170px;
+	  position: absolute;
+	  z-index: 2;
+	}
+	
+	#gridH {
+	  background-color: #eee;
+	  min-height: 600px;
+	  margin-bottom: 50px;
+	}
+	
+	#gridH .row {
+	  margin-top: 150px;
+	}
+	
+	#gridH .row .full {
+	  margin-top: -150px;
+	}
+	
+	.full:hover {
+	  transform: scale(1);
+	  box-shadow: none;
+	}
+	
+	.opacity {
+	  opacity: .8;
+	}
+	
+	.captionBox {
+	  background-color: rgba(0, 0, 0, 0.8);
+	  bottom: 50px;
+	  color: white;
+	  left: 50px;
+	  padding: 25px;
+	  position: absolute;
+	  opacity: 0;
+	}
+	
+	.captionBox p {
+	  font-size: 16px;
+    font-weight:300;
+	}
+	
+	.captionBox h3 {
+	  margin-top: 0;
+	  text-transform: uppercase;
+	}
+	
+	.transition {
+	  transition: 1s;
+	}
+	
+	.bottomRight {
+	  left: auto;
+	  right: 80px;
+	}
+	
+	.topRight {
+	  left: auto;
+	  right: 50px;
+	  bottom: auto;
+	  top: 50px;
+	}
+	
+	.topLeft {
+	  bottom: auto;
+	  top: 50px;
+	}
+	
+	.toggleIcon {
+	  background-color: rgba(0, 0, 0, 0.7);
+	  background-position: center center;
+	  background-repeat: no-repeat;
+	  background-size: 26px 26px;
+	  border-radius: 3px;
+	  bottom: 15px;
+	  height: 36px;
+	  left: -100px;
+	  opacity: 0;
+	  padding: 10px;
+	  position: absolute;
+	  width: 36px;
+	}
+	
+	.box.full .toggleIcon {
+	  background-color: rgba(0, 0, 0, 0.57);
+	  background-position: center center;
+	  background-repeat: no-repeat;
+	  border-radius: 3px;
+	  top: 26px;
+	  height: 36px;
+	  left: 50px;
+	  opacity: 0;
+	  padding: 10px;
+	  position: absolute;
+	  width: 36px;
+	}
+	
+	.box:hover .toggleIcon {
+	  opacity: 1;
+	  left: 15px;
+	  transition: all 0.25s ease 0s;
+	  background-image: url('img/visit_10.jpeg');
+	}
+	
+
+	
+	.box.full .toggleIcon:hover {
+	  background-color: black;
+	  transition: all 0s ease 0;
+	}
+	
+	#gridGallery > .row {
+	  margin: 0;
+	}
+	
+	@media (max-width: 1200px) {
+	  .full {
+	    width: 970px;
+	  }
+	}
+	
+	@media (max-width: 992px) {
+	  .full {
+	    width: 750px;
+	  }
+	}
+	
+	@media (max-width: 768px) {
+	  #boxThree,
+	  #boxFour,
+	  #boxFive,
+	  #boxSix {
+	    height: 300px;
+	  }
+	  .toggleIcon {
+	    display: none;
+	  }
+	  .full .captionBox {
+	    bottom: 0;
+	    left: 0;
+	    position: absolute;
+	    width: 100%;
+	    padding: 10px;
+	  }
+	  .full .captionBox p {
+	    display: none;
+	  }
+	  .full .captionBox h3 {
+	    margin-bottom: 0;
+	  }
+	  .box.full {
+	    height: inherit;
+	    width: 100%;
+	  }
+	  .box {
+	    max-height: 150px !important;
+	  }
+	  #gridGallery .row {
+	    background-color: transparent;
+	  }
+	  #gridH .row {
+	    margin-top: 0px;
+	  }
+	  .box.full .toggleIcon {
+	    height: 50px !important;
+	    left: 0 !important;
+	    top: 0 !important;
+	    width: 50px !important;
+	    display: block;
+	  }
+	  .mobileFunction {
+	    float: left;
+	    height: 150px;
+	    width: 100%;
+	  }
+	  /* SHAREPOINT ONLY */
+	}
+
+
+
+
+
+
+
+
+            .text-small {
+    font-size: 0.9rem !important;
+}
+.nav-item:hover::before {
+  width: 100%;
+}
+.nav-item::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  transition: all 0.3s;
+  height: 3px;
+  width: 0;
+  background-color : #1472ff;
+  
+}
+.nav-item{
+  position: relative;
+}
+/*.header {
+    background-color: #00d0ff;
+    background-image: url("img/ankor_04.jpeg");
+    width: 100%;
+    background-size: cover;
+    
+}*/
+.header-title{
+  font-family: 'Dangrek', cursive;
+  font-size: 68px;
+  border-top: 3%;
+
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.column {
+  float: center;
+  width: 32%;
+  margin-bottom: 16px;
+  padding: 0 13px;
+}
+
+@media screen and (max-width: 650px) {
+  .column {
+      text-align: center;
+    width: 100%;
+    display: block;
+  }
+}
+
+.card {
+    text-align: center;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.container {
+  padding: 0 16px;
+}
+
+.container::after, .row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.title {
+  color: grey;
+}
+
+.button {
+  border: none;
+  border-radius: 12px;
+  outline: 10;
+  display: inline-block;
+  padding: 11px;
+  color: white;
+  background-color: rgb(0, 89, 255);
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+}
+
+.button:hover {
+  background-color: #555;
+}
+.h1{
+    margin-bottom: 2.5rem;
+    font-weight: 500;
+    line-height: 2.2;
+    margin-top: 0px;
+}
+
+
+</style>
+</head>
+<body>
+  
+  <header class="header sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white py-3 shadow-sm">
+        <div class="container"><a class="navbar-brand" href="#">
+            
+            <strong class=" font-family: 'Dangrek', cursive;font-size:;" style="font-family: 'Dangrek', cursive; font-size: 25px;">តំបន់អង្គរ
+  
+            </strong></a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto" style="font-size: 15px;">
+                    <li class="nav-item active"><a class="nav-link" href="index.html">ទំព័រដើម <span class="sr-only"></span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="story.html">យានជំនិះ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="visite.html">ទស្សនា</a></li>
+                    <li class="nav-item"><a class="nav-link" href="gallary.html">រូបថត</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+  </header>
+  <h2 style="font-family: 'Dangrek', cursive; font-size: 40px; color: #1472ff; text-align: center;">រូបថតអនុស្សារី</h2><br>
+  <hr width="250px" style="border-top: 3px solid rgb(26, 106, 255); margin-top: 0;">
+  <section class="py-5 section-4">
+    <div class="container py-5 text-center">
+      <div class="row align-center" style="align-items: center;">
+        <div class="column">
+          </div>
+      
+       
+      </div>
+  </div>
+  </section>
+</section>
+<section id="gridGallery">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6 col-xs-6 box" id="boxOne">
+        <div class="toggleIcon"></div>
+    
+      </div>
+
+      <div class="col-sm-3 col-xs-6 box" id="boxTwo">
+        <div class="toggleIcon"></div>
+        <div class="col-sm-6 captionBox hiddenText">
+        </div>
+
+      </div>
+
+      <div class="col-sm-3 col-xs-6 box" id="boxThree">
+        <div class="toggleIcon"></div>
+        <div class="col-sm-6 captionBox hiddenText">
+        
+        </div>
+
+      </div>
+
+      <div class="col-sm-3 col-xs-6 box" id="boxFour">
+        <div class="toggleIcon"></div>
+        <div class="col-sm-6 captionBox hiddenText">
+        
+        </div>
+
+      </div>
+
+      <div class="col-sm-6 col-xs-6 pull-right box" id="boxEight">
+        <div class="toggleIcon"></div>
+        <div class="col-sm-6 captionBox hiddenText">
+        
+        </div>
+
+      </div>
+
+      <div class="col-sm-3 col-xs-6 pull-right box" id="boxSeven">
+        <div class="toggleIcon"></div>
+        <div class="col-sm-6 captionBox hiddenText">
+         
+        </div>
+
+      </div>
+
+      <div class="col-sm-3 col-xs-6 box" id="boxFive">
+        <div class="toggleIcon"></div>
+        <div class="col-sm-6 captionBox hiddenText bottomRight">
+         
+        </div>
+
+      </div>
+
+      <div class="col-sm-3 col-xs-6 box" id="boxSix">
+        <div class="toggleIcon"></div>
+        <div class="col-sm-6 captionBox hiddenText bottomRight">
+        
+        </div>
+
+      </div>
+
+
+    </div>
+    <!--.row-->
+
+  </div>
+  <!--.container-->
+
+
+</section>
+
+
+
+  <section class="py-5 section-4" style="background-color: rgb(245, 245, 245);">
+    <div class="container py-5 text-center">
+      <div class="row align-center" style="align-items: center;">
+          <div class="col-lg-6 mx-auto" style="text-align: center;">
+              <h2 style="font-family: 'Dangrek', cursive; font-size: 35px; color: #0c1118;">តំបន់អង្គរ</h2>
+              <span style="font-size: 20px;">&#169;<h2​ style="font-size: 20px;">រក្សារសិទ្ធគ្រប់យ៉ាងដោយ តំបន់អង្គរ​ ឆ្នាំ ២០២១</h2​></span>
+          </div>
+		  <div>
+			  
+		  </div>
+      </div>
+  </div>
+
+  </div>
+</body>
+
+</html>

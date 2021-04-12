@@ -1,0 +1,51 @@
+.text-small {
+    font-size: 0.9rem !important;
+}
+.nav-item:hover::before {
+  width: 100%;
+}
+.nav-item::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  transition: all 0.3s;
+  height: 3px;
+  width: 0;
+  background-color : #1472ff;
+  
+}
+.nav-item{
+  position: relative;
+}
+.header {
+    background-color: #00d0ff;
+    background-image: url("img/ankor_04.jpeg");
+    width: 100%;
+    background-size: cover;
+    
+}
+.header-title{
+  font-family: 'Dangrek', cursive;
+  font-size: 68px;
+  border-top: 3%;
+ 
+
+}
+
+
+.section-1 {
+    background: rgb(255, 255, 255);
+}
+
+.section-2 {
+    background: #ffffff;
+    text-align: center;
+}
+.section-3 {
+    background: rgb(255, 255, 255);
+
+}
+
+
+
+
